@@ -1,10 +1,16 @@
 <template>
   <div id="app">
     <p>Мы показываем страницу {{ id }}</p>
+<!--page не передаётся в компонент автоматически,
+в том, что это сделает компонент жёстко связанным с логикой работы v-for.
+Но если указывать источник данных явно, компонент можно будет использовать и
+в других ситуациях. -->
     <ul v-if="pages">
     <page
-      :key="page.id"
+      v-bind:page="page"
+      v-bind:key="page.id"
       v-for="page in pages"
+      v-bind:name="page.name"
     ></page>
     </ul>
     <button v-on:click="id += 1">{{ button }}</button>
@@ -25,7 +31,8 @@
         button: 'Show next',
         endpoint: 'https://api.punkapi.com/v2/beers?page=',
         pages: [],
-        id: 1
+        page: '',
+        id: 1,
       }
     },
 
