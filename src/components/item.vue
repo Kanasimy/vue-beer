@@ -23,7 +23,7 @@ export default {
     }
   },
   methods: {
-    getPost(id) {
+    getPage(id) {
       axios(this.endpoint +'?page=' + id)
         .then(response => {
           this.item = response.data

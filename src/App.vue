@@ -8,13 +8,13 @@
 import axios from 'axios'
 export default {
   name: 'app',
+  props: ['id'],
   data () {
     return {
       msg: 'I like BEER',
       button: 'Show next',
-      id: 1,
       beers: [],
-      endpoint: 'https://api.punkapi.com/v2/'
+      endpoint: 'https://api.punkapi.com/v2/beers'
     }
   },
 

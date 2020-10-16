@@ -11,7 +11,7 @@ const router = new Router({
       path: '/',
       name:'item',
       component: Item,
-      props: (routes) => { query: page: this.id },
+      props: (routes) => { query: page: id },
     }
   ]
 })
